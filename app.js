@@ -4,9 +4,13 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+//var MongoClient = require('mongodb').MongoClient;
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var employee_details = require('./routes/employee_details');
+var employee_list = require ('./routes/employee_list');
+var employee_salary_details = require ('./routes/employee_salary_details');
+var employee_attendence = require ('./routes/employee_attendence');
 
 var app = express();
 
@@ -31,6 +35,9 @@ app.use(function(req, res, next) {
     next(err);
 });
 
+app.get('/redirect', function(req, res) {
+    res.redirect('/');
+});
 /// error handlers
 
 // development error handler
@@ -60,3 +67,4 @@ module.exports = app;
 app.listen(3000, function() {
     console.log('message:"Server is live and Ready" ')
 });
+

@@ -1,10 +1,10 @@
-var mongoose = require('../connection/connection.js');
-var employee_listSchema = new mongoose.Schema({
+var mongoose = require('../Connection/connection.js');
+var EmployeeListSchema = new mongoose.Schema({
 
 Name:{
 	type: String
 },
-Fathers Name:{
+Fathers_Name:{
 	type: String
 },
 Address:{
@@ -23,13 +23,13 @@ Phone_Number:{
 Mobile_Number:{
 	type: Number
 },
-D.O.B :{
+DOB :{
 	type: Date
 },
-Marital Status:{
+Marital_Status:{
 	type: String
 },
-Next to kin:{
+Next_to_kin:{
 	type: String
 },
 
@@ -41,5 +41,5 @@ ICE:{
 
 
 });
-var employee_list = mongoose.model('Employee_list', Employee_listSchema);
-module.exports = employee_list;
+var employeeList = mongoose.model('Employeelists', EmployeeListSchema);
+module.exports = employeeList;
