@@ -7,9 +7,6 @@ exports.viewEmployee_attendence = function(req, res) {
 }
 exports.addAttendence = function(req, res) {
     console.log(req.body);
-
-
-
     // var record = new EmployeeAttendenceSchema({
     //     Employee_Id: req.body.Employee_Id,
     //     Number_Of_Attendence: req.body.Number_Of_Attendence,

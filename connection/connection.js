@@ -1,4 +1,4 @@
-var mongoose = require("mongoose"); 
+var mongoose = require("mongoose");
 var uristring = 'mongodb://localhost/employee';
 var theport = process.env.PORT || 3000;
 mongoose.connect(uristring, function(err, res) {
