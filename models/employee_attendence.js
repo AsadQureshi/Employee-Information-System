@@ -1,6 +1,9 @@
 var mongoose = require('../Connection/connection.js');
 var EmployeeAttendenceSchema = new mongoose.Schema({
 
+Employee_Id:{
+	type: Number
+},
 Number_Of_Attendence:{
 	type: Number
 },

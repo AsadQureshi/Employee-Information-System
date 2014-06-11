@@ -1,3 +1,4 @@
+var mongoose = require('../Connection/connection.js');
 var EmployeeListSchema = require('../Models/employee_list');
 var EmployeeDetailsSchema = require('../Models/Employee_details');
 var EmployeeAttendenceSchema = require('../Models/employee_attendence');
@@ -33,5 +34,7 @@ ICE:03334621364,
 			}
 			
     });
+    res.send(req.body);
+}
 }
 

@@ -8,15 +8,31 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var employee_details = require('./routes/employee_details');
-var employee_list = require ('./routes/employee_list');
-var employee_salary_details = require ('./routes/employee_salary_details');
-var employee_attendence = require ('./routes/employee_attendence');
+var employee_list = require('./routes/employee_list');
+var employee_salary_details = require('./routes/employee_salary_details');
+var employee_attendence = require('./routes/employee_attendence');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// app.set('view engine', 'jade');
+// html engine
+
+cons = require('consolidate'),
+
+//routes of modules
+app.get('/view/attendence', employee_attendence.viewEmployee_attendence);
+app.post('/attendence/add', employee_attendence.addAttendence);
+
+
+app.engine('html', cons.swig);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/views');
+app.get('/', function(req, res) {
+    res.render("index");
+});
+
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -38,6 +54,9 @@ app.use(function(req, res, next) {
 app.get('/redirect', function(req, res) {
     res.redirect('/');
 });
+//routes here
+
+
 /// error handlers
 
 // development error handler
@@ -64,7 +83,6 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-app.listen(3000, function() {
+app.listen(4000, function() {
     console.log('message:"Server is live and Ready" ')
 });
-
